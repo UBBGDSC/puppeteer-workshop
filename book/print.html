@@ -1,0 +1,1139 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title></title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">What is Puppeteer?</li><li class="chapter-item expanded "><a href="chapter-1.html"><strong aria-hidden="true">1.</strong> Puppeteer introduction</a></li><li class="chapter-item expanded "><a href="chapter-1.1.html"><strong aria-hidden="true">2.</strong> Getting started</a></li><li class="chapter-item expanded "><a href="core-concepts/core.html"><strong aria-hidden="true">3.</strong> Core concepts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="core-concepts/browser-management.html"><strong aria-hidden="true">3.1.</strong> Browser Management</a></li><li class="chapter-item expanded "><a href="core-concepts/page-interactions.html"><strong aria-hidden="true">3.2.</strong> Page Interactions</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><li class="part-title">Scraping the Web</li><li class="chapter-item expanded "><a href="chapter-1.html"><strong aria-hidden="true">4.</strong> Puppeteer introduction</a></li><li class="chapter-item expanded "><a href="chapter-1.1.html"><strong aria-hidden="true">5.</strong> Getting started</a></li><li class="chapter-item expanded "><a href="core-concepts/core.html"><strong aria-hidden="true">6.</strong> Core concepts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="core-concepts/browser-management.html"><strong aria-hidden="true">6.1.</strong> Browser Management</a></li><li class="chapter-item expanded "><a href="core-concepts/page-interactions.html"><strong aria-hidden="true">6.2.</strong> Page Interactions</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><li class="part-title">Rebase, Resolve, Revise</li><li class="chapter-item expanded "><a href="chapter-2.html"><strong aria-hidden="true">7.</strong> Collaboration in Git</a></li><li class="chapter-item expanded "><a href="chapter-2.1.html"><strong aria-hidden="true">8.</strong> Visualize Git Commands</a></li><li class="chapter-item expanded "><a href="exercise-2/exercise-2.html"><strong aria-hidden="true">9.</strong> Exercise: Merge Conflicts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="exercise-2/clone-repo.html"><strong aria-hidden="true">9.1.</strong> Clone Repository</a></li><li class="chapter-item expanded "><a href="exercise-2/add-personal-info.html"><strong aria-hidden="true">9.2.</strong> Add Personal Information</a></li><li class="chapter-item expanded "><a href="exercise-2/create-pull-requests.html"><strong aria-hidden="true">9.3.</strong> Create Pull Requests</a></li><li class="chapter-item expanded "><a href="exercise-2/resolve-merge-conflicts.html"><strong aria-hidden="true">9.4.</strong> Resolve Merge Conflicts</a></li><li class="chapter-item expanded "><a href="exercise-2/rebase-squash-merge.html"><strong aria-hidden="true">9.5.</strong> Rebase, Squash, and Merge</a></li></ol></li><li class="chapter-item expanded "><a href="exercise-2/interactive-rebase.html"><strong aria-hidden="true">10.</strong> Commit History and Interactive Rebase</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="quiz.html">Quiz & Feedback</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<p>Welcome, fellow developers and enthusiasts, to a workshop that will illuminate the path to mastering one of the most powerful tools in the web automation arsenal – Puppeteer. Developed by Google, Puppeteer is more than just a library; it's a gateway to automating tasks, testing websites, and breathing life into your web projects.</p>
+<p>Just as Git revolutionizes collaboration in the coding world, Puppeteer empowers developers to navigate the digital landscape with precision and finesse. With Puppeteer as your companion, you'll embark on a journey where virtual pages become your canvas, and scripts wield the power to interact with web elements, simulate user actions, and extract valuable insights.</p>
+<p>Throughout this workshop, we'll dive into the intricacies of Puppeteer, unraveling its capabilities, exploring practical use cases, and equipping you with the skills to wield this tool effectively. Whether you're a seasoned developer or a curious novice, Puppeteer offers a gateway to a world where automation is not just a convenience but a game-changer.</p>
+<p>As promised, we'll look into ways of finding rent in Cluj Napoca in a more efficient way. So, get ready to dive into the world of Puppeteer, where lines of code become puppet strings, and the web transforms into your stage. Let's embark on this journey together, where every click, every scroll, and every interaction is powered by the magic of Puppeteer. Your apartment in Cluj Napoca awaits!</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="what-is-puppeteer"><a class="header" href="#what-is-puppeteer">What is Puppeteer?</a></h2>
+<p>Puppeteer is a Node.js library which provides a high-level API to control Chrome/Chromium over the DevTools Protocol. While it's primarily used for automating web tasks, Puppeteer can also be used for web scraping, testing, and creating snapshots of web pages.</p>
+<img src="./images/go_away.jpeg" alt="Go Away" width="350"/>
+<img src="./images/programmer_move.jpeg" alt="Go Away" width="350"/>
+<img src="./images/is_this.webp" alt="Go Away" width="350"/>
+<img src="./images/progremr.jpeg" alt="Go Away" width="350"/>
+<h2 id="features"><a class="header" href="#features">Features</a></h2>
+<p>Most things that you can do manually in the browser can be done using Puppeteer! Here are a few examples to get you started:</p>
+<ul>
+<li>Automate form submission, UI testing, keyboard input, etc.</li>
+<li>Create an automated testing environment using the latest JavaScript and browser features.</li>
+<li>Capture a <a href="https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference">timeline trace</a> of your site to help diagnose performance issues.</li>
+<li>Generate screenshots and PDFs of pages.</li>
+<li>Crawl a SPA (Single-Page Application) and generate pre-rendered content (i.e. "SSR" (Server-Side Rendering)).</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="getting-started"><a class="header" href="#getting-started">Getting Started</a></h1>
+<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
+<p>To use Puppeteer in your project, run:</p>
+<pre><code class="language-bash">npm install puppeteer
+# or
+yarn add puppeteer
+# or
+pnpm add puppeteer
+</code></pre>
+<p>When you install Puppeteer, it automatically downloads a recent version of Chrome for Testing (~170MB macOS, ~282MB Linux, ~280MB Windows) and a <code>chrome-headless-shell binary</code> that is guaranteed to work with Puppeteer. The browser is downloaded to the $HOME/.cache/puppeteer folder by default</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="core-concepts"><a class="header" href="#core-concepts">Core Concepts</a></h2>
+<h3 id="1-browser-and-page"><a class="header" href="#1-browser-and-page">1. Browser and Page</a></h3>
+<p>At the heart of Puppeteer lies the concept of a <strong>browser</strong> and a <strong>page</strong>. The browser represents the Chrome or Chromium instance controlled by Puppeteer, while the page represents a single tab within that browser instance. Think of the browser as your window to the internet, and each page as a separate document or website within that window.</p>
+<h3 id="2-selectors"><a class="header" href="#2-selectors">2. Selectors</a></h3>
+<p>Selectors are a fundamental aspect of web automation, allowing you to pinpoint and interact with specific elements on a web page. Puppeteer leverages various types of selectors, including:</p>
+<ul>
+<li><strong>CSS Selectors:</strong> Utilize CSS syntax to target elements based on their attributes, classes, or relationships with other elements.</li>
+<li><strong>XPath Selectors:</strong> Employ XPath expressions to locate elements by their position in the HTML document tree.</li>
+<li><strong>DOM Selectors:</strong> Interact with elements using their unique IDs, names, or other properties within the Document Object Model (DOM).</li>
+</ul>
+<p>Understanding selectors is crucial for navigating and manipulating web pages effectively with Puppeteer. They serve as the building blocks for automating interactions such as clicking buttons, inputting text, or extracting data from specific elements.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="browser-management"><a class="header" href="#browser-management">Browser management</a></h1>
+<p>Usually, you start working with Puppeteer by launching a browser instance. This browser instance is controlled by Puppeteer and can be used to open new tabs, navigate to different URLs, interact with web pages, and perform various tasks.</p>
+<h2 id="launching-a-browser"><a class="header" href="#launching-a-browser">Launching a Browser</a></h2>
+<pre><code class="language-javascript">import puppeteer from "puppeteer";
+
+const browser = await puppeteer.launch();
+
+const page = await browser.newPage();
+</code></pre>
+<p>When launching a browser, you can specify various options to customize its behavior. These options include:</p>
+<ul>
+<li><code>headless</code>: A boolean value that determines whether the browser should run in headless mode (without a visible UI). By default, this option is set to <code>true</code>.</li>
+<li><code>slowMo</code>: A number that introduces a delay (in milliseconds) between Puppeteer actions. This can be useful for debugging or observing the automation process.</li>
+<li><code>defaultViewport</code>: An object that defines the initial browser window size and scale factor. This can be useful for ensuring consistent rendering across different devices.</li>
+<li><code>args</code>: An array of strings that specify additional command-line arguments to pass to the browser instance. These arguments can modify the browser's behavior or enable specific features.</li>
+<li>and more...</li>
+</ul>
+<pre><code class="language-javascript">const browser = await puppeteer.launch({
+  headless: false,
+  slowMo: 250,
+  defaultViewport: null,
+  args: ["--start-maximized"],
+});
+</code></pre>
+<h2 id="closing-the-browser"><a class="header" href="#closing-the-browser">Closing the Browser</a></h2>
+<p>Once you're done working with the browser, you should close it to free up system resources. You can close the browser instance using the <code>browser.close()</code> method.</p>
+<pre><code class="language-javascript">import puppeteer from "puppeteer";
+
+const browser = await puppeteer.launch();
+
+const page = await browser.newPage();
+
+await browser.close();
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="page-interactions"><a class="header" href="#page-interactions">Page interactions</a></h1>
+<p>In this section, we will learn how to interact with a page using Puppeteer. Puppeteer provides a high-level API to interact with a page, which includes navigating to a page, clicking on elements, typing text, and more. All the functions are asynchronous and return promises, which makes it easy to work with Puppeteer in an asynchronous manner. There are many methods available to interact with a page, and we will cover some of the most common ones, but you can find the full list in the <a href="https://pptr.dev/">official documentation</a>.</p>
+<h2 id="navigating-to-a-page"><a class="header" href="#navigating-to-a-page">Navigating to a Page</a></h2>
+<p>To navigate to a page, you can use the <code>page.goto()</code> method. This method takes a URL as an argument and loads the page at the specified URL.</p>
+<pre><code class="language-javascript">import puppeteer from "puppeteer";
+
+(async () =&gt; {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+
+  await page.goto("https://www.example.com");
+
+  await browser.close();
+})();
+</code></pre>
+<p>In the example above, we launch a browser instance, create a new page, and navigate to <code>https://www.example.com</code>. Once the page is loaded, we close the browser.</p>
+<h2 id="taking-screenshots"><a class="header" href="#taking-screenshots">Taking Screenshots</a></h2>
+<p>You can take a screenshot of a page using the <code>page.screenshot()</code> method. This method captures a screenshot of the current page and saves it to a file, to the specified path.</p>
+<pre><code class="language-javascript">import puppeteer from "puppeteer";
+
+(async () =&gt; {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+
+  await page.goto("https://www.example.com");
+  await page.screenshot({ path: "example.png", fullPage: true });
+
+  await browser.close();
+})();
+</code></pre>
+<h2 id="generating-pdfs"><a class="header" href="#generating-pdfs">Generating PDFs</a></h2>
+<p>You can generate a PDF of a page using the <code>page.pdf()</code> method. This method generates a PDF of the current page and saves it to a file, to the specified path.</p>
+<pre><code class="language-javascript">import puppeteer from "puppeteer";
+
+(async () =&gt; {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+
+  await page.goto("https://www.example.com");
+  await page.pdf({ path: "example.pdf", format: "A4" });
+
+  await browser.close();
+})();
+</code></pre>
+<h4 id="the-magic-of-puppeteer-lies-in-its-ability-to-evaluate-javascript-on-a-page-based-on-dom-manipulation-you-can-interact-with-elements-click-buttons-and-more-the-core-concepts-is-based-on-the-selectors-and-the-actions-you-want-to-perform-there-are-different-methods-to-evaluate-the-content-of-a-page"><a class="header" href="#the-magic-of-puppeteer-lies-in-its-ability-to-evaluate-javascript-on-a-page-based-on-dom-manipulation-you-can-interact-with-elements-click-buttons-and-more-the-core-concepts-is-based-on-the-selectors-and-the-actions-you-want-to-perform-there-are-different-methods-to-evaluate-the-content-of-a-page">The magic of Puppeteer lies in its ability to evaluate JavaScript on a page. Based on DOM manipulation, you can interact with elements, click buttons, and more. The core concepts is based on the selectors and the actions you want to perform. There are different methods to evaluate the content of a page:</a></h4>
+<h2 id="evaluating-javascript"><a class="header" href="#evaluating-javascript">Evaluating JavaScript</a></h2>
+<ol>
+<li><code>page.$(selector)</code>: This method returns the first element that matches the specified selector. If no element matches the selector, the method returns <code>null</code>.</li>
+<li><code>page.$$(selector)</code>: This method returns an array of elements that match the specified selector. If no elements match the selector, the method returns an empty array.</li>
+<li><code>page.$eval(selector, pageFunction, ...args)</code>: This method evaluates the specified function in the context of the first element that matches the selector. The function can access the DOM of the element and return a value. The arguments passed to the function are serialized and can be accessed as function parameters.</li>
+<li><code>page.evaluate(pageFunction, ...args)</code>: This method evaluates the specified function in the context of the page. The function can access the DOM of the page and return a value. The arguments passed to the function are serialized and can be accessed as function parameters.</li>
+</ol>
+<p>When evaluating JavaScript on a page, you can interact with elements, get their attributes, and perform various actions. This allows you to automate tasks, scrape data, and test web applications.</p>
+<pre><code class="language-javascript">import puppeteer from "puppeteer";
+
+const selector = ".selector";
+const textSelector = ".text-selector";
+
+(async () =&gt; {
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+    await page.goto("https://www.example.com");
+
+    const element = await page.$(selector); // Get the first element that matches the selector
+    const elements = await page.$$(selector); // Get all elements that match the selector
+
+    let value = await page.$eval(selector, (element) =&gt; {
+        return element..innerText;
+    });
+
+    value = await page.evaluate((selector) =&gt; {
+        return document.querySelector(selector).textContent;
+    }, selector);
+
+    const text = await element.evaluate((el) =&gt; el.textContent); // Get the text content of the element
+})();
+</code></pre>
+<h2 id="waiting-for-elements"><a class="header" href="#waiting-for-elements">Waiting for Elements</a></h2>
+<p>When interacting with a page, it's important to wait for elements to be available before performing actions on them. Puppeteer provides the <code>page.waitForSelector()</code> method to wait for an element to be present in the DOM. By default, this method waits for 30 seconds before timing out, but you can specify a custom timeout using the <code>timeout</code> option.</p>
+<pre><code class="language-javascript">import puppeteer from "puppeteer";
+
+const selector = ".selector";
+
+(async () =&gt; {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  await page.goto("https://www.example.com");
+
+  await page.waitForSelector(selector, { timeout: 5000 });
+
+  await browser.close();
+})();
+</code></pre>
+<p>Also, it's advisable to insert some delay before performing actions on the page. This can be done creating a delay function and using it before performing actions.</p>
+<pre><code class="language-javascript">function delay(time) {
+  return new Promise(function (resolve) {
+    setTimeout(resolve, time);
+  });
+}
+
+(async () =&gt; {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  await page.goto("https://www.example.com");
+
+  await delay(2000); // Wait for 2 seconds
+
+  await browser.close();
+})();
+</code></pre>
+<h2 id="clicking-on-elements"><a class="header" href="#clicking-on-elements">Clicking on Elements</a></h2>
+<p>To click on an element on a page, you can use the <code>element.click()</code> method. This method simulates a mouse click on the element. While this method seems pretty straightforward, in some cases, the element might not be completely visible or clickable, that's why it's more recommended to use the evaluation methods mentioned above.</p>
+<pre><code class="language-javascript">import puppeteer from "puppeteer";
+
+const selector = ".selector";
+
+(async () =&gt; {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  await page.goto("https://www.example.com");
+
+  await page.waitForSelector(selector);
+
+  const element = await page.$(selector);
+
+  await element.click();
+
+  // safer approach
+  await element.evaluate((el) =&gt; el.click());
+
+  await browser.close();
+})();
+</code></pre>
+<h2 id="typing-text"><a class="header" href="#typing-text">Typing Text</a></h2>
+<p>For input fields, you can use the <code>element.type()</code> method to type text into the field. This method simulates typing text on the keyboard and is useful for automating form submissions, login processes, and more.</p>
+<pre><code class="language-javascript">import puppeteer from "puppeteer";
+
+const selector = ".selector";
+
+(async () =&gt; {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  await page.goto("https://www.example.com");
+
+  await page.waitForSelector(selector);
+
+  const element = await page.$(selector);
+
+  await element.type("Hello, World!");
+
+  await browser.close();
+})();
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="what-is-puppeteer-1"><a class="header" href="#what-is-puppeteer-1">What is Puppeteer?</a></h2>
+<p>Puppeteer is a Node.js library which provides a high-level API to control Chrome/Chromium over the DevTools Protocol. While it's primarily used for automating web tasks, Puppeteer can also be used for web scraping, testing, and creating snapshots of web pages.</p>
+<img src="./images/go_away.jpeg" alt="Go Away" width="350"/>
+<img src="./images/programmer_move.jpeg" alt="Go Away" width="350"/>
+<img src="./images/is_this.webp" alt="Go Away" width="350"/>
+<img src="./images/progremr.jpeg" alt="Go Away" width="350"/>
+<h2 id="features-1"><a class="header" href="#features-1">Features</a></h2>
+<p>Most things that you can do manually in the browser can be done using Puppeteer! Here are a few examples to get you started:</p>
+<ul>
+<li>Automate form submission, UI testing, keyboard input, etc.</li>
+<li>Create an automated testing environment using the latest JavaScript and browser features.</li>
+<li>Capture a <a href="https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference">timeline trace</a> of your site to help diagnose performance issues.</li>
+<li>Generate screenshots and PDFs of pages.</li>
+<li>Crawl a SPA (Single-Page Application) and generate pre-rendered content (i.e. "SSR" (Server-Side Rendering)).</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="getting-started-1"><a class="header" href="#getting-started-1">Getting Started</a></h1>
+<h2 id="installation-1"><a class="header" href="#installation-1">Installation</a></h2>
+<p>To use Puppeteer in your project, run:</p>
+<pre><code class="language-bash">npm install puppeteer
+# or
+yarn add puppeteer
+# or
+pnpm add puppeteer
+</code></pre>
+<p>When you install Puppeteer, it automatically downloads a recent version of Chrome for Testing (~170MB macOS, ~282MB Linux, ~280MB Windows) and a <code>chrome-headless-shell binary</code> that is guaranteed to work with Puppeteer. The browser is downloaded to the $HOME/.cache/puppeteer folder by default</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="core-concepts-1"><a class="header" href="#core-concepts-1">Core Concepts</a></h2>
+<h3 id="1-browser-and-page-1"><a class="header" href="#1-browser-and-page-1">1. Browser and Page</a></h3>
+<p>At the heart of Puppeteer lies the concept of a <strong>browser</strong> and a <strong>page</strong>. The browser represents the Chrome or Chromium instance controlled by Puppeteer, while the page represents a single tab within that browser instance. Think of the browser as your window to the internet, and each page as a separate document or website within that window.</p>
+<h3 id="2-selectors-1"><a class="header" href="#2-selectors-1">2. Selectors</a></h3>
+<p>Selectors are a fundamental aspect of web automation, allowing you to pinpoint and interact with specific elements on a web page. Puppeteer leverages various types of selectors, including:</p>
+<ul>
+<li><strong>CSS Selectors:</strong> Utilize CSS syntax to target elements based on their attributes, classes, or relationships with other elements.</li>
+<li><strong>XPath Selectors:</strong> Employ XPath expressions to locate elements by their position in the HTML document tree.</li>
+<li><strong>DOM Selectors:</strong> Interact with elements using their unique IDs, names, or other properties within the Document Object Model (DOM).</li>
+</ul>
+<p>Understanding selectors is crucial for navigating and manipulating web pages effectively with Puppeteer. They serve as the building blocks for automating interactions such as clicking buttons, inputting text, or extracting data from specific elements.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="browser-management-1"><a class="header" href="#browser-management-1">Browser management</a></h1>
+<p>Usually, you start working with Puppeteer by launching a browser instance. This browser instance is controlled by Puppeteer and can be used to open new tabs, navigate to different URLs, interact with web pages, and perform various tasks.</p>
+<h2 id="launching-a-browser-1"><a class="header" href="#launching-a-browser-1">Launching a Browser</a></h2>
+<pre><code class="language-javascript">import puppeteer from "puppeteer";
+
+const browser = await puppeteer.launch();
+
+const page = await browser.newPage();
+</code></pre>
+<p>When launching a browser, you can specify various options to customize its behavior. These options include:</p>
+<ul>
+<li><code>headless</code>: A boolean value that determines whether the browser should run in headless mode (without a visible UI). By default, this option is set to <code>true</code>.</li>
+<li><code>slowMo</code>: A number that introduces a delay (in milliseconds) between Puppeteer actions. This can be useful for debugging or observing the automation process.</li>
+<li><code>defaultViewport</code>: An object that defines the initial browser window size and scale factor. This can be useful for ensuring consistent rendering across different devices.</li>
+<li><code>args</code>: An array of strings that specify additional command-line arguments to pass to the browser instance. These arguments can modify the browser's behavior or enable specific features.</li>
+<li>and more...</li>
+</ul>
+<pre><code class="language-javascript">const browser = await puppeteer.launch({
+  headless: false,
+  slowMo: 250,
+  defaultViewport: null,
+  args: ["--start-maximized"],
+});
+</code></pre>
+<h2 id="closing-the-browser-1"><a class="header" href="#closing-the-browser-1">Closing the Browser</a></h2>
+<p>Once you're done working with the browser, you should close it to free up system resources. You can close the browser instance using the <code>browser.close()</code> method.</p>
+<pre><code class="language-javascript">import puppeteer from "puppeteer";
+
+const browser = await puppeteer.launch();
+
+const page = await browser.newPage();
+
+await browser.close();
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="page-interactions-1"><a class="header" href="#page-interactions-1">Page interactions</a></h1>
+<p>In this section, we will learn how to interact with a page using Puppeteer. Puppeteer provides a high-level API to interact with a page, which includes navigating to a page, clicking on elements, typing text, and more. All the functions are asynchronous and return promises, which makes it easy to work with Puppeteer in an asynchronous manner. There are many methods available to interact with a page, and we will cover some of the most common ones, but you can find the full list in the <a href="https://pptr.dev/">official documentation</a>.</p>
+<h2 id="navigating-to-a-page-1"><a class="header" href="#navigating-to-a-page-1">Navigating to a Page</a></h2>
+<p>To navigate to a page, you can use the <code>page.goto()</code> method. This method takes a URL as an argument and loads the page at the specified URL.</p>
+<pre><code class="language-javascript">import puppeteer from "puppeteer";
+
+(async () =&gt; {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+
+  await page.goto("https://www.example.com");
+
+  await browser.close();
+})();
+</code></pre>
+<p>In the example above, we launch a browser instance, create a new page, and navigate to <code>https://www.example.com</code>. Once the page is loaded, we close the browser.</p>
+<h2 id="taking-screenshots-1"><a class="header" href="#taking-screenshots-1">Taking Screenshots</a></h2>
+<p>You can take a screenshot of a page using the <code>page.screenshot()</code> method. This method captures a screenshot of the current page and saves it to a file, to the specified path.</p>
+<pre><code class="language-javascript">import puppeteer from "puppeteer";
+
+(async () =&gt; {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+
+  await page.goto("https://www.example.com");
+  await page.screenshot({ path: "example.png", fullPage: true });
+
+  await browser.close();
+})();
+</code></pre>
+<h2 id="generating-pdfs-1"><a class="header" href="#generating-pdfs-1">Generating PDFs</a></h2>
+<p>You can generate a PDF of a page using the <code>page.pdf()</code> method. This method generates a PDF of the current page and saves it to a file, to the specified path.</p>
+<pre><code class="language-javascript">import puppeteer from "puppeteer";
+
+(async () =&gt; {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+
+  await page.goto("https://www.example.com");
+  await page.pdf({ path: "example.pdf", format: "A4" });
+
+  await browser.close();
+})();
+</code></pre>
+<h4 id="the-magic-of-puppeteer-lies-in-its-ability-to-evaluate-javascript-on-a-page-based-on-dom-manipulation-you-can-interact-with-elements-click-buttons-and-more-the-core-concepts-is-based-on-the-selectors-and-the-actions-you-want-to-perform-there-are-different-methods-to-evaluate-the-content-of-a-page-1"><a class="header" href="#the-magic-of-puppeteer-lies-in-its-ability-to-evaluate-javascript-on-a-page-based-on-dom-manipulation-you-can-interact-with-elements-click-buttons-and-more-the-core-concepts-is-based-on-the-selectors-and-the-actions-you-want-to-perform-there-are-different-methods-to-evaluate-the-content-of-a-page-1">The magic of Puppeteer lies in its ability to evaluate JavaScript on a page. Based on DOM manipulation, you can interact with elements, click buttons, and more. The core concepts is based on the selectors and the actions you want to perform. There are different methods to evaluate the content of a page:</a></h4>
+<h2 id="evaluating-javascript-1"><a class="header" href="#evaluating-javascript-1">Evaluating JavaScript</a></h2>
+<ol>
+<li><code>page.$(selector)</code>: This method returns the first element that matches the specified selector. If no element matches the selector, the method returns <code>null</code>.</li>
+<li><code>page.$$(selector)</code>: This method returns an array of elements that match the specified selector. If no elements match the selector, the method returns an empty array.</li>
+<li><code>page.$eval(selector, pageFunction, ...args)</code>: This method evaluates the specified function in the context of the first element that matches the selector. The function can access the DOM of the element and return a value. The arguments passed to the function are serialized and can be accessed as function parameters.</li>
+<li><code>page.evaluate(pageFunction, ...args)</code>: This method evaluates the specified function in the context of the page. The function can access the DOM of the page and return a value. The arguments passed to the function are serialized and can be accessed as function parameters.</li>
+</ol>
+<p>When evaluating JavaScript on a page, you can interact with elements, get their attributes, and perform various actions. This allows you to automate tasks, scrape data, and test web applications.</p>
+<pre><code class="language-javascript">import puppeteer from "puppeteer";
+
+const selector = ".selector";
+const textSelector = ".text-selector";
+
+(async () =&gt; {
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+    await page.goto("https://www.example.com");
+
+    const element = await page.$(selector); // Get the first element that matches the selector
+    const elements = await page.$$(selector); // Get all elements that match the selector
+
+    let value = await page.$eval(selector, (element) =&gt; {
+        return element..innerText;
+    });
+
+    value = await page.evaluate((selector) =&gt; {
+        return document.querySelector(selector).textContent;
+    }, selector);
+
+    const text = await element.evaluate((el) =&gt; el.textContent); // Get the text content of the element
+})();
+</code></pre>
+<h2 id="waiting-for-elements-1"><a class="header" href="#waiting-for-elements-1">Waiting for Elements</a></h2>
+<p>When interacting with a page, it's important to wait for elements to be available before performing actions on them. Puppeteer provides the <code>page.waitForSelector()</code> method to wait for an element to be present in the DOM. By default, this method waits for 30 seconds before timing out, but you can specify a custom timeout using the <code>timeout</code> option.</p>
+<pre><code class="language-javascript">import puppeteer from "puppeteer";
+
+const selector = ".selector";
+
+(async () =&gt; {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  await page.goto("https://www.example.com");
+
+  await page.waitForSelector(selector, { timeout: 5000 });
+
+  await browser.close();
+})();
+</code></pre>
+<p>Also, it's advisable to insert some delay before performing actions on the page. This can be done creating a delay function and using it before performing actions.</p>
+<pre><code class="language-javascript">function delay(time) {
+  return new Promise(function (resolve) {
+    setTimeout(resolve, time);
+  });
+}
+
+(async () =&gt; {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  await page.goto("https://www.example.com");
+
+  await delay(2000); // Wait for 2 seconds
+
+  await browser.close();
+})();
+</code></pre>
+<h2 id="clicking-on-elements-1"><a class="header" href="#clicking-on-elements-1">Clicking on Elements</a></h2>
+<p>To click on an element on a page, you can use the <code>element.click()</code> method. This method simulates a mouse click on the element. While this method seems pretty straightforward, in some cases, the element might not be completely visible or clickable, that's why it's more recommended to use the evaluation methods mentioned above.</p>
+<pre><code class="language-javascript">import puppeteer from "puppeteer";
+
+const selector = ".selector";
+
+(async () =&gt; {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  await page.goto("https://www.example.com");
+
+  await page.waitForSelector(selector);
+
+  const element = await page.$(selector);
+
+  await element.click();
+
+  // safer approach
+  await element.evaluate((el) =&gt; el.click());
+
+  await browser.close();
+})();
+</code></pre>
+<h2 id="typing-text-1"><a class="header" href="#typing-text-1">Typing Text</a></h2>
+<p>For input fields, you can use the <code>element.type()</code> method to type text into the field. This method simulates typing text on the keyboard and is useful for automating form submissions, login processes, and more.</p>
+<pre><code class="language-javascript">import puppeteer from "puppeteer";
+
+const selector = ".selector";
+
+(async () =&gt; {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  await page.goto("https://www.example.com");
+
+  await page.waitForSelector(selector);
+
+  const element = await page.$(selector);
+
+  await element.type("Hello, World!");
+
+  await browser.close();
+})();
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="collaboration-in-git"><a class="header" href="#collaboration-in-git">Collaboration in Git</a></h1>
+<h2 id="key-concepts"><a class="header" href="#key-concepts">Key Concepts</a></h2>
+<ul>
+<li><strong>Cloning:</strong> Creating a local copy of a repository. This enables work on the project locally and facilitates pushing changes to the remote repository.</li>
+<li><strong>Push/Pull:</strong> The primary methods of syncing changes between a local and remote repository. Pushing sends committed changes to a remote repository, while pulling retrieves changes from a remote repository.</li>
+<li><strong>Merge:</strong> The process of combining changes from different branches. Typically done when a feature branch is complete and ready to integrate into the main branch.</li>
+<li><strong>Forking:</strong> Creating a copy of a repository under your account. This allows experimentation with changes without affecting the original project.</li>
+</ul>
+<h2 id="pull-requests"><a class="header" href="#pull-requests">Pull Requests</a></h2>
+<p>Pull requests simplify collaboration using GitHub. They notify project maintainers about changes in a forked repository, making it easier to review and discuss proposed changes before integration into the official project. Pull requests are commonly used to propose changes, notify maintainers about changes in a forked repository, discuss proposed changes, and collaborate with other developers.</p>
+<p>When submitted, pull requests are reviewed by project maintainers. They can approve, request changes, or close the request. They're an excellent way to contribute to open source projects and gain experience with Git and GitHub. Merging pull requests offers two options:</p>
+<ul>
+<li><strong>Merge Commit:</strong> Creates a new commit to record changes, the default option.</li>
+<li><strong>Squash and Merge:</strong> Combines all commits into a single commit before merging, keeping the commit history concise.</li>
+</ul>
+<p><img src="https://i.stack.imgur.com/hUtiB.png" alt="Merging Options" /></p>
+<h2 id="basic-commands"><a class="header" href="#basic-commands">Basic Commands</a></h2>
+<h3 id="example-commands"><a class="header" href="#example-commands">Example Commands:</a></h3>
+<ul>
+<li><code>git init</code>: Initialize a new Git repository.</li>
+<li><code>git add &lt;file&gt;</code>: Add changes to the staging area.</li>
+<li><code>git commit -m "message"</code>: Commit changes with a descriptive message.</li>
+<li><code>git status</code>: Check the status of your working directory.</li>
+<li><code>git log</code>: View the commit history.</li>
+<li><code>git diff</code>: View changes made to a file.</li>
+<li><code>git checkout &lt;branch&gt;</code>: Switch to a different branch. Use <code>git checkout -b &lt;branch&gt;</code> to create a new branch.</li>
+<li><code>git reset &lt;file&gt;</code>: Remove a file from the staging area.</li>
+<li><code>git rm &lt;file&gt;</code>: Remove a file from the working directory and staging area.</li>
+<li><code>git mv &lt;file&gt; &lt;new file&gt;</code>: Rename a file and stage the change.</li>
+<li><code>git remote add origin &lt;url&gt;</code>: Add a remote repository.</li>
+<li><code>git push origin &lt;branch&gt;</code>: Push changes to a remote repository.</li>
+<li><code>git pull origin &lt;branch&gt;</code>: Pull changes from a remote repository.</li>
+<li><code>git clone &lt;url&gt;</code>: Clone a remote repository to your local machine.</li>
+<li><code>git merge &lt;branch&gt;</code>: Merge a branch into the active branch.</li>
+<li><code>git fetch</code>: Download changes from a remote repository.</li>
+<li><code>git stash</code>: Temporarily store changes that you don't want to commit.</li>
+<li><code>git push --force</code>: Force push changes to a remote repository (Use with caution).</li>
+</ul>
+<h2 id="best-practices"><a class="header" href="#best-practices">Best Practices</a></h2>
+<h3 id="recommendations-for-effective-git-usage"><a class="header" href="#recommendations-for-effective-git-usage">Recommendations for effective Git usage:</a></h3>
+<ul>
+<li><strong>Descriptive Commit Messages:</strong> Write messages explaining changes made, avoiding vague statements like "fixed bug". This aids in tracking changes and understanding history.</li>
+<li><strong>Regular Pulling Changes:</strong> Pull changes regularly from the remote repository to keep the local repository updated and reduce the risk of conflicts.</li>
+<li><strong>Branch Naming Conventions:</strong> Use descriptive branch names, making it easier to understand their purpose and track changes.</li>
+<li><strong>Code Reviews and Collaboration:</strong> Utilize pull requests for reviewing proposed changes before integrating them into the official project. It's a great way to collaborate and learn about Git and GitHub.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="collaboration-in-git-1"><a class="header" href="#collaboration-in-git-1">Collaboration in Git</a></h1>
+<h2 id="merging"><a class="header" href="#merging">Merging</a></h2>
+<p>Having multiple branches is extremely convenient to keep new changes separated and avoid pushing unapproved or broken changes to production. When the changes are approved, integrating them into the production branch is essential.</p>
+<h3 id="fast-forward---ff"><a class="header" href="#fast-forward---ff">Fast-forward (--ff)</a></h3>
+<p>A fast-forward merge occurs when the current branch has no additional commits compared to the branch being merged. Git prefers this as the easiest option: it merges the commit(s) from the branch being merged into the current branch without creating a new commit.</p>
+<p><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--cT4TSe48--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/894znjv4oo9agqiz4dql.gif" alt="Fast-forward Merge" /></p>
+<h3 id="no-fast-forward---no-ff"><a class="header" href="#no-fast-forward---no-ff">No-fast-forward (--no-ff)</a></h3>
+<p>In case the current branch has commits not present in the branch to be merged, Git performs a no-fast-forward merge. This creates a new merging commit on the active branch, integrating changes from both branches.</p>
+<p><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--zRZ0x2Vc--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/rf1o2b6eduboqwkigg3w.gif" alt="No-fast-forward Merge" /></p>
+<h3 id="merge-conflicts"><a class="header" href="#merge-conflicts">Merge Conflicts</a></h3>
+<p>Merging branches with conflicting changes in the same lines or with deleted files that were modified elsewhere can cause merge conflicts. Git highlights these conflicts, enabling manual resolution by removing unwanted changes, saving, re-adding the changed file, and committing the changes.</p>
+<p><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--7lBksXwA--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/bcd5ajtoc0g5dxzmpfbq.gif" alt="Merge Conflicts" /></p>
+<h3 id="rebasing"><a class="header" href="#rebasing">Rebasing</a></h3>
+<p>Git rebase copies commits from the current branch and places them on top of the specified branch. Unlike merging, rebasing doesn't attempt to decide which files to keep, maintaining the branch's latest changes and avoiding merging conflicts.</p>
+<p><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--EIY4OOcE--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/dwyukhq8yj2xliq4i50e.gif" alt="Rebasing" /></p>
+<p>Rebasing is ideal when integrating updates from the master branch into a feature branch, preventing future merging conflicts.</p>
+<h3 id="interactive-rebase"><a class="header" href="#interactive-rebase">Interactive Rebase</a></h3>
+<p>Interactive rebase allows modification of commits before rebasing, offering six actions:</p>
+<ul>
+<li>reword: Edit the commit message.</li>
+<li>edit: Amend the commit.</li>
+<li>squash: Combine the commit into the previous one.</li>
+<li>fixup: Merge the commit into the previous one without retaining the commit's log message.</li>
+<li>exec: Execute a command on each commit being rebased.</li>
+<li>drop: Remove the commit.</li>
+</ul>
+<p><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--P6jr7igd--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/msofpv7k6rcmpaaefscm.gif" alt="Interactive Rebase" /></p>
+<p>Feel free to use these actions for full control over your commits, whether removing or merging them. Interactive rebase facilitates the modification of commits.</p>
+<h3 id="soft-reset"><a class="header" href="#soft-reset">Soft Reset</a></h3>
+<p>A soft reset shifts HEAD to the specified commit without discarding changes introduced by the following commits. It preserves access to the changes made in the previous commits, enabling fixing and recommitting them later.</p>
+<p><img src="https://res.cloudinary.com/practicaldev/image/fetch/s---GveiZe---/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/je5240aqa5uw9d8j3ibb.gif" alt="Soft Reset" /></p>
+<h3 id="hard-reset"><a class="header" href="#hard-reset">Hard Reset</a></h3>
+<p>A hard reset returns Git's state to the specified commit, including changes in the working directory and staged files, discarding all changes introduced after the commit.</p>
+<p><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--GqjwnYkF--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/hlh0kowt3hov1xhcku38.gif" alt="Hard Reset" /></p>
+<h3 id="reverting"><a class="header" href="#reverting">Reverting</a></h3>
+<p>Git revert creates a new commit that undoes the changes introduced by the specified commit, ensuring the commit history remains unaltered.</p>
+<p><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--eckmvr2M--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/3kkd2ahn41zixs12xgpf.gif" alt="Reverting" /></p>
+<p>Git revert is useful for undoing a specific commit without altering the branch's history.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="exercise-2"><a class="header" href="#exercise-2">Exercise 2</a></h1>
+<p>Welcome to the Git Essentials second exercise! In this exercise, you'll dive into resolving merge conflicts in a collaborative Git environment. The focus will be on updating personal information in a shared file, generating merge conflicts, and exploring different conflict resolution strategies. Here's the tasks you'll be performing:</p>
+<ul>
+<li><a href="exercise-2/./clone-repo.html">Clone Repository</a></li>
+<li><a href="exercise-2/./add-personal-info.html">Add Personal Information</a></li>
+<li><a href="exercise-2/./create-pull-requests.html">Create Pull Requests</a></li>
+<li><a href="exercise-2/./resolve-merge-conflicts.html">Resolve Merge Conflicts</a></li>
+<li><a href="exercise-2/./rebase-squash-merge.html">Rebase, Squash, and Merge</a></li>
+<li><a href="exercise-2/./interactive-rebase.html">Commit History and Interactive Rebase</a></li>
+</ul>
+<h3 id="instructions"><a class="header" href="#instructions">Instructions</a></h3>
+<ol>
+<li>
+<p><strong>Updating Your Profile:</strong></p>
+<ul>
+<li>Your task is to update the <code>gdsc.txt</code> file in repositories belonging to your fellow participants. Add your name, occupation, favorite hobby, and something you dislike to their <code>gdsc.txt</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Creating Pull Requests:</strong></p>
+<ul>
+<li>Initiate a Pull Request in the repository you're modifying, aiming to update the <code>gdsc.txt</code> file.</li>
+<li>Ensure your PR clearly states the purpose: "Adding Personal Information."</li>
+</ul>
+</li>
+<li>
+<p><strong>Simulating Merge Conflicts:</strong></p>
+<ul>
+<li>Your goal is to make changes to the same line or section of the <code>gdsc.txt</code> file in repositories of other participants.</li>
+<li>When your PRs are submitted, try merging them into your repository. You may face merge conflicts due to changes in the same sections of the file.</li>
+</ul>
+</li>
+<li>
+<p><strong>Resolving Conflicts:</strong></p>
+<ul>
+<li>Use Git commands (<code>git status</code>, <code>git diff</code>, <code>git checkout --ours/--theirs</code>) to identify conflicting sections.</li>
+<li>Discuss and communicate effectively with the repository owners to decide on retaining specific changes.</li>
+<li>Resolve conflicts either by manual editing or using Git tools, ensuring file consistency and preventing data loss during conflict resolution.</li>
+</ul>
+</li>
+<li>
+<p><strong>Exploring Git Strategies:</strong></p>
+<ul>
+<li>Experiment with different merge strategies (merge, rebase, squash) while integrating changes from the main repository.</li>
+<li>Consider the advantages and limitations of each strategy in managing conflicts and maintaining a clean commit history.</li>
+</ul>
+</li>
+<li>
+<p><strong>Reviewing Commit History and Interactive Rebase:</strong></p>
+<ul>
+<li>Analyze commit history using <code>git log</code>.</li>
+<li>Learn about interactive rebase by renaming a commit, squashing, or rearranging commits based on a previous commit.</li>
+</ul>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="cloning-repositories"><a class="header" href="#cloning-repositories">Cloning Repositories</a></h1>
+<p>In this section, we'll cover the process of cloning repositories from GitHub onto your local machine.</p>
+<h3 id="1-sharing-repository-urls"><a class="header" href="#1-sharing-repository-urls">1. Sharing Repository URLs</a></h3>
+<p>Each participant sitting at the same table should share their repository URL. This URL can be obtained from their GitHub repository.</p>
+<h3 id="2-accessing-private-repositories-if-applicable"><a class="header" href="#2-accessing-private-repositories-if-applicable">2. Accessing Private Repositories (If applicable)</a></h3>
+<p>If the repositories are private, participants need to grant access permissions to others. Ask the repository owner to grant access to you by having him follow these steps:</p>
+<details>
+   <summary>Granting Permissions for Private Repositories on GitHub</summary>
+<ol>
+<li>Go to the repository on GitHub.</li>
+<li>Click on "Settings" in the repository.</li>
+<li>Select <code>Collaborators and Teams</code> from the sidebar.</li>
+<li>Under <code>Manage access</code>, click on <code>Add people</code>.</li>
+<li>Enter the GitHub username or email of the person you want to grant access to.</li>
+<li>Select the write permission level.</li>
+<li>Finally, click on "Add [username/email] to this repository".</li>
+</ol>
+</details>
+<h3 id="3-cloning-the-repository"><a class="header" href="#3-cloning-the-repository">3. Cloning the Repository</a></h3>
+<p>For each participant, follow these steps to clone the repository to your local machine:</p>
+<p>a. Open your terminal or Git Bash.
+b. Use the <code>git clone</code> command followed by the repository URL:</p>
+<pre><code>  git clone &lt;repository_URL&gt;
+</code></pre>
+<p>c. This will create a local copy of the repository on your machine.</p>
+<p>If all went well with adding an SSH key in the previous exercise, you should be able to clone the repository without any issues. <strong>If you're still having trouble, ask for a volunteer to help you out.</strong></p>
+<h3 id="4-verifying-the-clone"><a class="header" href="#4-verifying-the-clone">4. Verifying the Clone</a></h3>
+<p>Once the cloning process is completed, navigate into the cloned directory using the <code>cd</code> command in the terminal to ensure the repository has been successfully cloned.</p>
+<p>Following these steps will allow each participant to clone repositories onto their local machines, enabling them to contribute and collaborate effectively.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="add-personal-information"><a class="header" href="#add-personal-information">Add Personal Information</a></h1>
+<h3 id="objective"><a class="header" href="#objective">Objective</a></h3>
+<p>The objective of this task is to update the <code>gdsc.txt</code> file in repositories owned by other participants with your personal information.</p>
+<h3 id="steps"><a class="header" href="#steps">Steps</a></h3>
+<ol>
+<li>
+<p><strong>Create a New Branch:</strong></p>
+<ul>
+<li>
+<p>In your terminal, create a new branch for your changes using:
+<code>git checkout -b {your-name}</code></p>
+<details>
+<summary>What name should I use for my branch?</summary>
+   You can use any name you want for your branch. 
+<p>However, it's best practice to use a descriptive name that reflects the purpose of the branch. In this case, you can use your own name as the branch name, to avoid branch name clashes with the other participants.</p>
+</li>
+</ul>
+ </details>
+</li>
+<li>
+<p><strong>Open <code>gdsc.txt</code>:</strong></p>
+<ul>
+<li>Navigate to the repository of a fellow participant in your preferred code editor.</li>
+</ul>
+</li>
+<li>
+<p><strong>Update <code>gdsc.txt</code>:</strong></p>
+<ul>
+<li>Locate the <code>gdsc.txt</code> file and add your name, occupation, favorite hobby, and something you dislike in the existing format, similarly to how the repository owner has added their information.</li>
+</ul>
+</li>
+<li>
+<p><strong>Save Changes:</strong></p>
+<ul>
+<li>Save the modifications made to the <code>gdsc.txt</code> file.</li>
+</ul>
+</li>
+<li>
+<p><strong>Stage Changes:</strong></p>
+<ul>
+<li>In your terminal, add the modified file to the staging area using the command:</li>
+</ul>
+<pre><code class="language-bash">git add gdsc.txt
+</code></pre>
+</li>
+<li>
+<p><strong>Commit Changes:</strong></p>
+<ul>
+<li>Commit the changes with a descriptive message:</li>
+</ul>
+<pre><code class="language-bash">git commit -m "Added personal information to gdsc.txt"
+</code></pre>
+</li>
+<li>
+<p><strong>Push to Repository:</strong></p>
+<ul>
+<li>Push the changes to the repository using the command:
+<code>git push --set-upstream origin {branch-name}</code>   <details>
+   <summary> What is --set-upstream?</summary>
+       The `--set-upstream` flag is used to set the default remote branch for the current local branch. This allows you to use `git push` without specifying the remote branch name.
+   </details></li>
+</ul>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h3 id="creating-a-pull-request-on-github"><a class="header" href="#creating-a-pull-request-on-github">Creating a Pull Request on GitHub</a></h3>
+<ol>
+<li>
+<p><strong>Navigate to the Repository:</strong></p>
+<ul>
+<li>Visit the repository on GitHub where you've made changes that you want to merge.</li>
+</ul>
+</li>
+<li>
+<p><strong>Switch to the Branch:</strong></p>
+<ul>
+<li>If the changes are in a specific branch, ensure you're on that branch.</li>
+</ul>
+</li>
+<li>
+<p><strong>Click on "New Pull Request":</strong></p>
+<ul>
+<li>On the repository page, click on the "Pull Requests" tab.</li>
+</ul>
+</li>
+<li>
+<p><strong>Compare Changes:</strong></p>
+<ul>
+<li>Click the "New pull request" button. GitHub will automatically detect the base and compare branches. Ensure the changes you want to merge are displayed correctly.</li>
+</ul>
+</li>
+<li>
+<p><strong>Add Title and Description:</strong></p>
+<ul>
+<li>Provide a title and description that clearly explains the purpose of the Pull Request. Describe the changes and why they are being made.</li>
+</ul>
+</li>
+<li>
+<p><strong>Review Changes:</strong></p>
+<ul>
+<li>Review the changes tab to ensure all modifications you expect are included.</li>
+</ul>
+</li>
+<li>
+<p><strong>Assign Reviewers (If Required):</strong></p>
+<ul>
+<li>Assign specific reviewers for your Pull Request, if necessary. Reviewers will be notified to assess your changes.</li>
+</ul>
+</li>
+<li>
+<p><strong>Labels, Milestones, and Projects (Optional):</strong></p>
+<ul>
+<li>Apply labels, associate milestones, or link the PR to a project board if your repository uses these features.</li>
+</ul>
+</li>
+<li>
+<p><strong>Create the Pull Request:</strong></p>
+<ul>
+<li>Click "Create Pull Request" to officially open the Pull Request.</li>
+</ul>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="resolve-merge-conflicts"><a class="header" href="#resolve-merge-conflicts">Resolve Merge Conflicts</a></h1>
+<h3 id="scenario"><a class="header" href="#scenario">Scenario</a></h3>
+<p>Ideally, each repository should have at least two Pull Requests (PRs) modifying the same <code>gdsc.txt</code> file with contact information. Merging one PR may cause a conflict in the other PR due to changes in the same file.</p>
+<h3 id="steps-to-solve-conflicts"><a class="header" href="#steps-to-solve-conflicts">Steps to Solve Conflicts</a></h3>
+<p>The primary difference between the merge and rebase approaches lies in how they integrate changes.</p>
+<p><strong>Merge</strong> combines the commit histories of the divergent branches, creating a new commit that reflects the combined changes. It retains the original commit history but may result in "merge commits," which explicitly mark where the branches were merged.</p>
+<p><strong>Rebase</strong>, on the other hand, rewrites the commit history by placing the local branch's commits on top of the latest changes from the main branch. This creates a linear and cleaner history but alters commit timestamps.</p>
+<h4 id="merge-approach"><a class="header" href="#merge-approach">Merge Approach:</a></h4>
+<ol>
+<li>
+<p><strong>Checkout the Branch:</strong></p>
+<ul>
+<li>Navigate to the branch with the conflicting changes:
+<code>git checkout branch-name</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Pull the Latest Changes:</strong></p>
+<ul>
+<li>Fetch the latest changes from the remote repository:
+<code>git pull origin main</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Resolve Conflicts Locally:</strong></p>
+<ul>
+<li>Open the <code>gdsc.txt</code> file in your code editor.</li>
+<li>Resolve conflicts using the editor's conflict resolution tool or manually by editing the file.
+<ul>
+<li>The conflict markers (<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code>, <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>) denote conflicting sections.</li>
+<li>Use the editor's tool to choose and retain the desired changes from both versions.</li>
+<li>Ensure the file reflects the intended information after conflict resolution.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Stage and Commit Changes:</strong></p>
+<ul>
+<li>After resolving conflicts, stage the modified file:
+<code>git add gdsc.txt</code></li>
+<li>Commit the changes:
+<code>git commit -m "Resolved merge conflict in gdsc.txt"</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Push Changes to the Branch:</strong></p>
+<ul>
+<li>Push the changes to the branch:
+<code>git push origin branch-name</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Merge the PR:</strong></p>
+<ul>
+<li>Proceed to merge the conflicted PR through the repository interface.</li>
+</ul>
+</li>
+</ol>
+<h4 id="rebase-approach"><a class="header" href="#rebase-approach">Rebase Approach:</a></h4>
+<ol>
+<li>
+<p><strong>Checkout the Branch:</strong></p>
+<ul>
+<li>Navigate to the branch with the conflicting changes:
+<code>git checkout branch-name</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Rebase from Main:</strong></p>
+<ul>
+<li>Rebase the branch with the latest changes from the main branch:
+<code>git rebase main</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Resolve Conflicts:</strong></p>
+<ul>
+<li>Address any conflicts encountered during the rebase process by following the prompts in your terminal.</li>
+</ul>
+</li>
+<li>
+<p><strong>Continue Rebase:</strong></p>
+<ul>
+<li>After conflicts are resolved, continue the rebase:
+<code>git rebase --continue</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Push the Rebased Changes:</strong></p>
+<ul>
+<li>Push the rebased changes to the remote branch:
+<code>git push --force origin branch-name</code></li>
+</ul>
+ <details>
+ <summary>What is --force?</summary>
+     The `--force` flag is used to force push the rebased changes to the remote branch. This is required because the rebase process rewrites the commit history of the branch.
+ </details>
+</li>
+<li>
+<p><strong>Merge the PR:</strong></p>
+<ul>
+<li>Proceed to merge the rebased PR through the repository interface.</li>
+</ul>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="rebase-squash-and-merge"><a class="header" href="#rebase-squash-and-merge">Rebase, Squash, and Merge</a></h1>
+<h3 id="github-pull-request-ui-options"><a class="header" href="#github-pull-request-ui-options">GitHub Pull Request UI Options</a></h3>
+<p>In the GitHub Pull Request UI, when merging a pull request, three distinct options are available:</p>
+<ol>
+<li>
+<p><strong>Create Merge Commit:</strong></p>
+<ul>
+<li>This option generates a merge commit to incorporate changes. It retains the commit history of the merged branch, clearly marking the point where the branches were merged.</li>
+</ul>
+</li>
+<li>
+<p><strong>Squash and Merge:</strong></p>
+<ul>
+<li>Choosing this option condenses multiple commits from the feature branch into a single commit before merging. It helps maintain a clean commit history, especially for branches with numerous smaller commits.</li>
+</ul>
+</li>
+<li>
+<p><strong>Rebase and Merge:</strong></p>
+<ul>
+<li>The rebase and merge option applies the changes from the feature branch onto the base branch by restructuring the commit history. It produces a linear history, placing the feature branch's commits atop the base branch's latest changes.</li>
+</ul>
+</li>
+</ol>
+<p>Each option offers a distinct approach to integrating changes from a pull request, allowing contributors to select the method that best aligns with the project's version control and commit history preferences. These options significantly influence the resulting commit history and repository structure.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="commit-history-and-interactive-rebase"><a class="header" href="#commit-history-and-interactive-rebase">Commit History and Interactive Rebase</a></h1>
+<h3 id="understanding-commit-history"><a class="header" href="#understanding-commit-history">Understanding Commit History</a></h3>
+<p>Git's <code>log</code> command offers a view of the commit history. It displays a list of commits in reverse chronological order, showcasing commit messages, authors, and commit hashes. Participants can enter <code>git log</code> in the terminal to view the commit history of a repository, gaining insights into the project's development timeline.</p>
+<h3 id="interactive-rebase-exercise"><a class="header" href="#interactive-rebase-exercise">Interactive Rebase Exercise</a></h3>
+<p>Let's explore the functionality of interactive rebase, focusing on squashing commits, changing messages, deleting, and picking commits in a simple exercise.</p>
+<ol>
+<li>
+<p><strong>Squashing Commits:</strong></p>
+<ul>
+<li>Demonstrate squashing multiple commits into a single one using <code>git rebase -i HEAD~N</code>, where <code>N</code> is the number of commits to include.</li>
+</ul>
+</li>
+<li>
+<p><strong>Changing Commit Messages:</strong></p>
+<ul>
+<li>Show how to alter commit messages during an interactive rebase by marking commits as <code>reword</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Deleting Commits:</strong></p>
+<ul>
+<li>Guide participants on how to delete specific commits from the commit history using <code>git rebase -i</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Picking Commits:</strong></p>
+<ul>
+<li>Illustrate how to pick specific commits and rearrange their order using <code>git rebase -i</code>.</li>
+</ul>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="quiz--feedback"><a class="header" href="#quiz--feedback">Quiz &amp; Feedback</a></h1>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </div>
+    </body>
+</html>
