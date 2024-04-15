@@ -8,7 +8,7 @@ To begin with, we'll analyze the website, and identify the structure of the page
 
 <img src="./images/olx.png" alt="OLX" width="1000"/>
 
-We can see that the website has a list of announcements for apartments in Cluj-Napoca. Each announcement has a title, a price, a location (always Cluj Napoca), and a surface area. For each unique aspect of the announcement, we will try to identify the corresponding selector.
+We can see that the website has a list of announcements for apartments in Cluj-Napoca. Each announcement has a title, a price, a location (always Cluj Napoca), a surface area, an image, and an url. For each unique aspect of the announcement, we will try to identify the corresponding selector.
 
 ```javascript
 import puppeteer from "puppeteer";
@@ -22,6 +22,8 @@ const SELECTORS = {
   TITLE: ".offer-title",
   PRICE: ".price",
   SURFACE: ".surface",
+  URL: ".url",
+  IMAGE: ".image",
 };
 ```
 
@@ -78,10 +80,16 @@ for (const announcement of announcements) {
     // do nothing
   }
 
+  const imagePath = await announcement.$eval(SELECTORS.IMAGE, (el) => el.src);
+
+  const url = await announcement.$eval(SELECTORS.URL, (el) => el.href);
+
   data.push({
     title: title,
     price: price,
     surface: surface,
+    image: imagePath,
+    url: url,
   });
 }
 ```
@@ -100,6 +108,8 @@ const SELECTORS = {
   TITLE: ".offer-title",
   PRICE: ".price",
   SURFACE: ".surface",
+  URL: ".url",
+  IMAGE: ".image",
   NEXT_PAGE: ".pager .next a",
 };
 ```

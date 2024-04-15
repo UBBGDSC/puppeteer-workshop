@@ -4,7 +4,7 @@ Congrats! You have successfully completed the web scraping demo. Now it's time t
 
 ## Objective
 
-You are the biggest GDSC fan, and you want to attend as many workshops as possible. You are able to go anywhere in the world, so the location is not a problem. For this, you want to scrape the GDSC events from the [GDSC website](https://gdsc.community.dev/events/#/list). For each event, you want to extract the title, date, location, description, image link, and the tags associated with the event.
+You are the biggest GDSC fan, and you want to attend as many workshops as possible. You are able to go anywhere in the world, so the location is not a problem. For this, you want to scrape the GDSC events from the [GDSC website](https://gdsc.community.dev/events/#/list). For each event, you want to extract the title, date, location, description, image link, the tags associated with the event, and the url
 
 <img src="./images/upcoming_events.png" alt="Go Away" width="900"/>
 

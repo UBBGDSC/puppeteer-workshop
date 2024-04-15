@@ -11,6 +11,7 @@ const SELECTORS = {
   DESCRIPTION: ".EventRectangle-styles-description-sDn7J",
   IMAGE: ".EventRectangle-styles-picture-SPjDJ",
   TAGS: ".MuiChip-label",
+  URL: ".EventRectangle-styles-viewDetails-PsfIW",
   LOAD_MORE: ".loadMoreContainer a",
 };
 
@@ -41,19 +42,21 @@ async function run() {
 
     const location = await event.$eval(
       SELECTORS.LOCATION,
-      (el) => el.innerText,
+      (el) => el.innerText
     );
 
     const description = await event.$eval(
       SELECTORS.DESCRIPTION,
-      (el) => el.innerText,
+      (el) => el.innerText
     );
 
     const image = await event.$eval(SELECTORS.IMAGE, (el) => el.src);
 
     const tags = await event.$$eval(SELECTORS.TAGS, (tags) =>
-      tags.map((tag) => tag.innerText),
+      tags.map((tag) => tag.innerText)
     );
+
+    const url = await event.$eval(SELECTORS.URL, (el) => el.href);
 
     data.push({
       title: title,
@@ -62,10 +65,11 @@ async function run() {
       description: description,
       image: image,
       tags: tags,
+      url: url,
     });
   }
 
-  fs.writeFile("gdsc_events.json", JSON.stringify(data), (err) => {
+  fs.writeFile("data.json", JSON.stringify(data), (err) => {
     if (err) throw err;
     console.log("File saved");
   });
