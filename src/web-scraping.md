@@ -6,7 +6,7 @@ In this chapter, we will set up the constants that we will use throughout the pr
 
 To begin with, we'll analyze the website, and identify the structure of the page.
 
-<img src="../images/olx.png" alt="OLX" width="1000"/>
+<img src="./images/olx.png" alt="OLX" width="1000"/>
 
 We can see that the website has a list of announcements for apartments in Cluj-Napoca. Each announcement has a title, a price, a location (always Cluj Napoca), and a surface area. For each unique aspect of the announcement, we will try to identify the corresponding selector.
 
@@ -63,16 +63,16 @@ for (const announcement of announcements) {
 
   const title = await announcement.$eval(
     SELECTORS.TITLE,
-    (el) => el.textContent,
+    (el) => el.textContent
   );
   const price = await announcement.$eval(
     SELECTORS.PRICE,
-    (el) => el.textContent,
+    (el) => el.textContent
   );
   try {
     surface = await announcement.$eval(
       SELECTORS.SURFACE,
-      (el) => el.textContent,
+      (el) => el.textContent
     );
   } catch (e) {
     // do nothing
