@@ -2,10 +2,7 @@
 
 Puppeteer is a Node.js library which provides a high-level API to control Chrome/Chromium over the DevTools Protocol. While it's primarily used for automating web tasks, Puppeteer can also be used for web scraping, testing, and creating snapshots of web pages.
 
-<img src="./images/go_away.jpeg" alt="Go Away" width="350"/>
-<img src="./images/programmer_move.jpeg" alt="Go Away" width="350"/>
-<img src="./images/is_this.webp" alt="Go Away" width="350"/>
-<img src="./images/progremr.jpeg" alt="Go Away" width="350"/>
+<img src="./images/go_away.jpeg" alt="Go Away" width="700"/>
 
 ## Features
 
