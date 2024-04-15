@@ -41,18 +41,18 @@ async function run() {
 
     const location = await event.$eval(
       SELECTORS.LOCATION,
-      (el) => el.innerText
+      (el) => el.innerText,
     );
 
     const description = await event.$eval(
       SELECTORS.DESCRIPTION,
-      (el) => el.innerText
+      (el) => el.innerText,
     );
 
     const image = await event.$eval(SELECTORS.IMAGE, (el) => el.src);
 
     const tags = await event.$$eval(SELECTORS.TAGS, (tags) =>
-      tags.map((tag) => tag.innerText)
+      tags.map((tag) => tag.innerText),
     );
 
     data.push({

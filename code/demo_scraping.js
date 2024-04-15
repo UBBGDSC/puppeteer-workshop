@@ -33,16 +33,16 @@ async function run() {
 
       const title = await announcement.$eval(
         SELECTORS.TITLE,
-        (el) => el.textContent
+        (el) => el.textContent,
       );
       const price = await announcement.$eval(
         SELECTORS.PRICE,
-        (el) => el.textContent
+        (el) => el.textContent,
       );
       try {
         surface = await announcement.$eval(
           SELECTORS.SURFACE,
-          (el) => el.textContent
+          (el) => el.textContent,
         );
       } catch (e) {
         // do nothing
@@ -57,7 +57,7 @@ async function run() {
     try {
       const nextPageURL = await page.$eval(
         SELECTORS.NEXT_PAGE,
-        (el) => el.href
+        (el) => el.href,
       );
       await page.goto(nextPageURL);
     } catch (e) {

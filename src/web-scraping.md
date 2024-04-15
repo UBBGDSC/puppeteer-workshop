@@ -63,16 +63,16 @@ for (const announcement of announcements) {
 
   const title = await announcement.$eval(
     SELECTORS.TITLE,
-    (el) => el.textContent
+    (el) => el.textContent,
   );
   const price = await announcement.$eval(
     SELECTORS.PRICE,
-    (el) => el.textContent
+    (el) => el.textContent,
   );
   try {
     surface = await announcement.$eval(
       SELECTORS.SURFACE,
-      (el) => el.textContent
+      (el) => el.textContent,
     );
   } catch (e) {
     // do nothing
